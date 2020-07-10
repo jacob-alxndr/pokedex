@@ -22,8 +22,13 @@ class Home extends Component {
     this.updateRegion = this.updateRegion.bind(this)
   }
 
-  updateRegion(start, amount, region) {
-    this.setState({ start: start, amount: amount, region: region })
+  updateRegion(start, amount, region, clicked) {
+    this.setState({
+      start: start,
+      amount: amount,
+      region: region,
+      clicked: clicked,
+    })
   }
 
   render() {

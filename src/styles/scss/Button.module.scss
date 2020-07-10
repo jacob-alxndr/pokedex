@@ -5,4 +5,8 @@
   text-transform: capitalize;
   cursor: pointer;
   background-color: transparent;
+
+  &.active {
+    border-bottom: 1px solid #32f;
+  }
 }

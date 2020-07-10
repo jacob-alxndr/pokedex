@@ -15,7 +15,7 @@ class Pokedex extends Component {
 
   async createPokedex(start, amount) {
     const promises = Array.from({ length: 807 }).map(
-      (pokemon, i) => (pokemon = fetchPokemon(i + 1))
+      (pokemon, i) => (pokemon = fetchPokemon(i + 0))
     )
     await Promise.all(promises).then(res => {
       const pokemon = res.map(p => ({
@@ -35,6 +35,7 @@ class Pokedex extends Component {
 
   render() {
     const { pokemon, isLoading } = this.state
+
     let pokemonSet
     if (!isLoading) {
       const set = [...pokemon]

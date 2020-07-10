@@ -18,7 +18,11 @@ class Pokecard extends Component {
             src={src}
             alt={this.props.name}
           />
-          <img src={this.props.sprite} alt={this.props.name} />
+          <img
+            className={styles.Pokecard__img_sprite}
+            src={this.props.sprite}
+            alt={this.props.name}
+          />
         </div>
         <div className={styles.Pokecard__text}>
           <p className={styles.Pokecard__type}>Type(s): {this.props.types}</p>

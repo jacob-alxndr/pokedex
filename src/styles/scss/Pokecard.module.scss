@@ -1,5 +1,5 @@
 .Pokecard {
-  padding: 4rem 0.2rem;
+  padding: 2rem 0.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +26,21 @@
     flex-direction: column;
     // background-color: rgba(76, 0, 255, 0.171);
     img {
-      max-width: 10rem;
+      max-width: 15rem;
+      transform: scale(0.8);
+      transition: transform 0.5s;
+    }
+  }
+
+  &__img_container_sprite {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // background-color: rgba(76, 0, 255, 0.171);
+    img {
+      max-width: 7rem;
       transform: scale(0.8);
       transition: transform 0.5s;
     }

@@ -3,67 +3,59 @@ import React, { Component } from "react"
 import Button from "./Button"
 import styles from "../styles/scss/Navigation.module.scss"
 class Navigation extends Component {
+  static defaultProps = {
+    regions: [
+      { start: 0, total: 151, region: "Kanto" },
+      { start: 151, total: 100, region: "Johto" },
+      { start: 251, total: 135, region: "Hoenn" },
+      { start: 386, total: 107, region: "Sinnoh" },
+      { start: 493, total: 156, region: "Unova" },
+      { start: 649, total: 72, region: "Kalos" },
+      { start: 721, total: 86, region: "Alola" },
+    ],
+  }
+  constructor(props) {
+    super(props)
+    this.state = {
+      isClicked: Array.from({
+        length: this.props.regions.length,
+      }).map((item, i) => (i === 0 ? (item = true) : (item = false))),
+    }
+    this.handleActive = this.handleActive.bind(this)
+  }
+
+  handleActive(idx) {
+    this.setState(state => {
+      const newClicked = state.isClicked.map((item, i) => {
+        if (i === idx) {
+          return (item = true)
+        } else {
+          return (item = false)
+        }
+        // i === idx ? (item = true) : (item = false)
+      })
+      // console.log(newClicked)
+      return { isClicked: newClicked }
+    })
+  }
   render() {
     return (
       <div className={styles.Navigation}>
         <nav>
           <ul className={styles.Navigation.ul}>
-            <li>
-              <Button
-                updateRegion={this.props.updateRegion}
-                start={0}
-                amount={150}
-                region="Kanto"
-              />
-            </li>
-            <li>
-              <Button
-                updateRegion={this.props.updateRegion}
-                start={151}
-                amount={100}
-                region="Johto"
-              />
-            </li>
-            <li>
-              <Button
-                updateRegion={this.props.updateRegion}
-                start={251}
-                amount={135}
-                region="Hoenn"
-              />
-            </li>
-            <li>
-              <Button
-                updateRegion={this.props.updateRegion}
-                start={386}
-                amount={107}
-                region="Sinnoh"
-              />
-            </li>
-            <li>
-              <Button
-                updateRegion={this.props.updateRegion}
-                start={493}
-                amount={156}
-                region="Unova"
-              />
-            </li>
-            <li>
-              <Button
-                updateRegion={this.props.updateRegion}
-                start={649}
-                amount={72}
-                region="Kalos"
-              />
-            </li>
-            <li>
-              <Button
-                updateRegion={this.props.updateRegion}
-                start={721}
-                amount={86}
-                region="Alola"
-              />
-            </li>
+            {this.props.regions.map((region, i) => (
+              <li key={region.region}>
+                <Button
+                  updateRegion={this.props.updateRegion}
+                  start={region.start}
+                  amount={region.total}
+                  region={region.region}
+                  isClicked={this.state.isClicked[i]}
+                  handleActive={this.handleActive}
+                  id={i}
+                />
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
