@@ -1,0 +1,11 @@
+.Navigation {
+  padding: 4rem 6rem;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    li:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+  }
+}

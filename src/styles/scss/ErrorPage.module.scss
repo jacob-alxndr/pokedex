@@ -1,0 +1,13 @@
+.ErrorPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  .Link {
+    color: black;
+    display: inline-block;
+    text-decoration: underline;
+  }
+}
