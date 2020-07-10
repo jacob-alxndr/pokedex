@@ -1,5 +1,6 @@
 // import React from "react"
 import React, { Component } from "react"
+import { Helmet } from "react-helmet"
 // import { Link } from "gatsby"
 import Navigation from "../Components/Navigation"
 // export default function Home() {
@@ -34,6 +35,13 @@ class Home extends Component {
   render() {
     return (
       <div className={home}>
+        <Helmet>
+          {/* Your other meta tags... */}
+          <meta name="image" content="./logo.png" />
+          <meta property="og:image" content="./logo.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="./logo.png" />
+        </Helmet>
         <Navigation updateRegion={this.updateRegion} />
         <Pokedex
           start={this.state.start}
