@@ -37,10 +37,19 @@ class Home extends Component {
       <div className={home}>
         <Helmet>
           {/* Your other meta tags... */}
-          <meta name="image" content="./static/logo.png" />
-          <meta property="og:image" content="./static/logo.png" />
+          <meta
+            name="image"
+            content="https://raw.githubusercontent.com/jacob-alxndr/pokedex/master/static/logo.png"
+          />
+          <meta
+            property="og:image"
+            content="https://raw.githubusercontent.com/jacob-alxndr/pokedex/master/static/logo.png"
+          />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content="./static/logo.png" />
+          <meta
+            name="twitter:image"
+            content="https://raw.githubusercontent.com/jacob-alxndr/pokedex/master/static/logo.png"
+          />
         </Helmet>
         <Navigation updateRegion={this.updateRegion} />
         <Pokedex
