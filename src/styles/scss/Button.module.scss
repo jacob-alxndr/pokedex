@@ -1,12 +1,18 @@
 .Button {
-  // padding: 1rem;
   border: none;
   font-size: 1.8rem;
   text-transform: capitalize;
   cursor: pointer;
   background-color: transparent;
+  border-bottom: 3px solid transparent;
+  outline: none;
+
+  &:focus {
+    outline: none;
+    border-bottom: 3px solid #32f;
+  }
 
   &.active {
-    border-bottom: 1px solid #32f;
+    border-bottom: 3px solid #32f;
   }
 }
