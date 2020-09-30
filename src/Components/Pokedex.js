@@ -14,17 +14,29 @@ class Pokedex extends Component {
   }
 
   async createPokedex(start, amount) {
-    const promises = Array.from({ length: 807 }).map(
-      (pokemon, i) => (pokemon = fetchPokemon(i + 0))
+    const promises = Array.from({ length: 806 }).map(
+      (pokemon, i) => (pokemon = fetchPokemon(i + 1))
     )
     await Promise.all(promises).then(res => {
-      const pokemon = res.map(p => ({
-        id: p.id,
-        base_experience: p.base_experience,
-        name: p.name,
-        sprite: p.sprites.front_default,
-        types: p.types.map(p => p.type.name).join(", "),
-      }))
+      const pokemon = res.map(p => {
+        if (p === undefined) {
+          return {
+            id: "N/A",
+            base_experience: "N/A",
+            name: "N/A",
+            sprite: "N/A",
+            types: "N/A",
+          }
+        } else {
+          return {
+            id: p.id,
+            base_experience: p.base_experience,
+            name: p.name,
+            sprite: p.sprites.front_default,
+            types: p.types.map(p => p.type.name).join(", "),
+          }
+        }
+      })
       this.setState({ pokemon: pokemon, isLoading: false })
     })
   }

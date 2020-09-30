@@ -1,8 +1,12 @@
-const endpoint = ` https://pokeapi.co/api/v2/pokemon`
+const endpoint = `https://pokeapi.co/api/v2/pokemon`
 
 async function fetchPokemon(id) {
-  const res = await fetch(`${endpoint}/${id + 1}`)
+  const res = await fetch(`${endpoint}/${id + 0}`)
+  if (res.status === 404) {
+    return
+  }
   const data = await res.json()
+
   return data
 }
 

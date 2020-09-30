@@ -36,7 +36,6 @@ class Home extends Component {
     return (
       <div className={home}>
         <Helmet>
-          {/* Your other meta tags... */}
           <meta
             name="image"
             content="https://raw.githubusercontent.com/jacob-alxndr/pokedex/master/static/logo.png"
