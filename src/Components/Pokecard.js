@@ -10,8 +10,11 @@ class Pokecard extends Component {
     return (
       <div className={styles.Pokecard}>
         <h3 className={styles.Pokecard__name}>
-          #{this.props.id} {this.props.name}
+        {this.props.name.charAt(0).toUpperCase() + this.props.name.slice(1) }
         </h3>
+        <p className={styles.Pokecard__text}>
+         #{this.props.id}
+        </p>
         <div className={styles.Pokecard__img_container}>
           <img
             className={styles.Pokecard__img}

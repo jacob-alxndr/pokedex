@@ -18,6 +18,7 @@ class Pokedex extends Component {
       (pokemon, i) => (pokemon = fetchPokemon(i + 1))
     )
     await Promise.all(promises).then(res => {
+
       const pokemon = res.map(p => {
         if (p === undefined) {
           return {
@@ -27,7 +28,9 @@ class Pokedex extends Component {
             sprite: "N/A",
             types: "N/A",
           }
+       
         } else {
+  
           return {
             id: p.id,
             base_experience: p.base_experience,
