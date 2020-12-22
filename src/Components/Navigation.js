@@ -11,7 +11,8 @@ class Navigation extends Component {
       { start: 386, total: 107, region: "Sinnoh" },
       { start: 493, total: 156, region: "Unova" },
       { start: 649, total: 72, region: "Kalos" },
-      { start: 721, total: 86, region: "Alola" },
+      { start: 721, total: 88, region: "Alola" },
+      { start: 809, total: 89, region: "Galar" },
     ],
   }
   constructor(props) {

@@ -14,7 +14,7 @@ class Pokedex extends Component {
   }
 
   async createPokedex(start, amount) {
-    const promises = Array.from({ length: 806 }).map(
+    const promises = Array.from({ length: 901 }).map(
       (pokemon, i) => (pokemon = fetchPokemon(i + 1))
     )
     await Promise.all(promises).then(res => {
