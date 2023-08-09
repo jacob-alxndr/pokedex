@@ -14,11 +14,35 @@ import Pokedex from "../Components/Pokedex"
 // }
 
 class Johto extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      start: 151,
+      amount: 100,
+      region: "Johto",
+      total: 1010,
+    }
+    this.updateRegion = this.updateRegion.bind(this)
+  }
+
+  updateRegion(start, amount, region, clicked) {
+    this.setState({
+      start: start,
+      amount: amount,
+      region: region,
+      clicked: clicked,
+    })
+  }
   render() {
     return (
       <div>
-        <Navigation />
-        <Pokedex start={151} amount={100} />
+        <Navigation updateRegion={this.updateRegion} gen={2} />
+        <Pokedex
+          start={this.state.start}
+          amount={this.state.amount}
+          total={this.state.total}
+          region={this.state.region}
+        />
       </div>
     )
   }

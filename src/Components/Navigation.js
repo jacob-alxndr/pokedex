@@ -13,6 +13,7 @@ class Navigation extends Component {
       { start: 649, total: 72, region: "Kalos" },
       { start: 721, total: 88, region: "Alola" },
       { start: 809, total: 89, region: "Galar" },
+      { start: 905, total: 107, region: "Paldea" },
     ],
   }
   constructor(props) {
@@ -20,7 +21,9 @@ class Navigation extends Component {
     this.state = {
       isClicked: Array.from({
         length: this.props.regions.length,
-      }).map((item, i) => (i === 0 ? (item = true) : (item = false))),
+      }).map((item, i) =>
+        i === this.props.gen - 1 ? (item = true) : (item = false)
+      ),
     }
     this.handleActive = this.handleActive.bind(this)
   }

@@ -19,6 +19,7 @@ class Home extends Component {
       start: 0,
       amount: 151,
       region: "Kanto",
+      total: 1010,
     }
     this.updateRegion = this.updateRegion.bind(this)
   }
@@ -50,10 +51,11 @@ class Home extends Component {
             content="https://raw.githubusercontent.com/jacob-alxndr/pokedex/master/static/logo.png"
           />
         </Helmet>
-        <Navigation updateRegion={this.updateRegion} />
+        <Navigation updateRegion={this.updateRegion} gen={1} />
         <Pokedex
           start={this.state.start}
           amount={this.state.amount}
+          total={this.state.total}
           region={this.state.region}
         />
       </div>
